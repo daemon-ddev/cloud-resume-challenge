@@ -31,3 +31,14 @@ test('starts at 1 when no entity exists yet', async () => {
   const result = await getAndIncrementCount(client);
   expect(result).toBe(1);
 });
+
+test('propagates non-404 errors from getEntity', async () => {
+  const client = {
+    getEntity: jest.fn(async () => {
+      throw Object.assign(new Error('boom'), { statusCode: 500 });
+    }),
+    upsertEntity: jest.fn(),
+  };
+  await expect(getAndIncrementCount(client)).rejects.toThrow('boom');
+  expect(client.upsertEntity).not.toHaveBeenCalled();
+});
