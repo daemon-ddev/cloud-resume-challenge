@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/functions/*.js",
+  "scripts": {
+    "test": "jest",
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.5.1",
+    "@azure/data-tables": "^13.2.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
