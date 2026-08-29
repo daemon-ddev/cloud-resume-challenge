@@ -1100,6 +1100,8 @@ cd "/Users/a/Desktop/Cloud Computing/Microsoft Azure " && git add README.md && g
 - Modify: `frontend/src/components/Certifications.jsx` — replace `REPLACE_WITH_YOUR_CREDENTIAL_VERIFICATION_LINK` with your real Microsoft Learn/Credly verification link
 - Modify: `frontend/src/components/Journey.jsx` — replace the placeholder paragraph with your own write-up
 - Modify: `frontend/src/components/Footer.jsx` — replace `REPLACE_WITH_YOUR_LINKEDIN_URL` and `REPLACE_WITH_YOUR_EMAIL`
+- Modify: `frontend/src/components/Projects.jsx` — replace `REPLACE_WITH_REPO_NAME` with the real repo name from Task 15
+- Modify: `frontend/index.html` — replace `Your Name` in the `<title>` tag
 
 - [ ] **Step 1: Fill in every placeholder listed above with your real details**
 
