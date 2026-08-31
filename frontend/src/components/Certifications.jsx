@@ -3,15 +3,8 @@ function Certifications() {
     <section className="section" id="certifications">
       <h2>Certifications</h2>
       <div className="cert-card">
-        <h3>Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
-        <a
-          className="btn"
-          href="REPLACE_WITH_YOUR_CREDENTIAL_VERIFICATION_LINK"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Verify Certificate
-        </a>
+        <h3>Microsoft Certified: Azure Administrator Associate (AZ-104)</h3>
+        <p>Exam booked for 18 October 2026 — studied Azure Fundamentals (AZ-900) material first as groundwork.</p>
       </div>
     </section>
   );

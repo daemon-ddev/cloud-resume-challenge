@@ -20,15 +20,16 @@ function Footer() {
         <a href="https://github.com/daemon-ddev" target="_blank" rel="noreferrer">
           GitHub
         </a>
-        <a href="REPLACE_WITH_YOUR_LINKEDIN_URL" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/guled-jama-0b831b220/" target="_blank" rel="noreferrer">
           LinkedIn
         </a>
-        <a href="mailto:REPLACE_WITH_YOUR_EMAIL">Email</a>
+        <a href="mailto:guledjama.dev@gmail.com">Email</a>
       </div>
       {!failed && (
-        <p className="visitor-count">
-          Visitors: {count === null ? '—' : count}
-        </p>
+        <div className="visitor-count">
+          <span className="label">Visitor Count</span>
+          <span className="value">{count === null ? '----' : String(count).padStart(4, '0')}</span>
+        </div>
       )}
     </footer>
   );

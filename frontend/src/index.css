@@ -1,28 +1,30 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0B1F3A;
-  --bg-deep: #071426;
-  --bg-secondary: #10294f;
-  --accent: #0078D4;
-  --accent-bright: #4FA8F0;
-  --accent-warm: #F0A868;
-  --text: #f5f7fa;
-  --text-muted: #9fb3d1;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bg: #0d3157;
+  --bg-deep: #071f38;
+  --bg-panel: rgba(255, 255, 255, 0.03);
+  --line: rgba(180, 210, 235, 0.14);
+  --line-strong: rgba(200, 222, 240, 0.32);
+  --ink: #eef5fb;
+  --ink-muted: #7fa2c4;
+  --red: #ff5a4a;
+  --red-dim: rgba(255, 90, 74, 0.4);
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
 body {
-  background:
-    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(79, 168, 240, 0.16), transparent 60%),
-    radial-gradient(ellipse 700px 600px at 100% 20%, rgba(240, 168, 104, 0.08), transparent 55%),
-    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 40%, var(--bg) 100%);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 1000px 700px at 50% 0%, rgba(200, 222, 240, 0.1), transparent 60%),
+    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 30%, var(--bg) 100%);
   background-attachment: fixed;
-  color: var(--text);
-  font-family: var(--font-body);
-  line-height: 1.6;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  line-height: 1.7;
   position: relative;
+  min-height: 100vh;
 }
 
 body::before {
@@ -38,10 +40,17 @@ body::before {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 a {
-  color: var(--accent-bright);
+  color: var(--ink);
+  text-decoration-color: var(--red-dim);
+}
+
+::selection {
+  background: var(--red);
+  color: var(--bg-deep);
 }
