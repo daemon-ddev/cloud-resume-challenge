@@ -4,7 +4,7 @@ A personal portfolio site built to apply what I learned studying for the
 Microsoft AZ-900 (Azure Fundamentals) certification — deployed on real
 Azure infrastructure, not just described in a document.
 
-**Live site:** <REPLACE_WITH_LIVE_URL_AFTER_DEPLOYMENT>
+**Live site:** https://yellow-wave-045f3af0f.3.azurestaticapps.net
 
 ## What this is
 
