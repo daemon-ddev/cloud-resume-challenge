@@ -3,6 +3,7 @@ const { TableClient } = require('@azure/data-tables');
 const TABLE_NAME = 'VisitorCounter';
 const PARTITION_KEY = 'counter';
 const ROW_KEY = 'site';
+const MAX_RETRIES = 5;
 
 function getClient() {
   return TableClient.fromConnectionString(
@@ -12,25 +13,45 @@ function getClient() {
 }
 
 async function getAndIncrementCount(client = getClient()) {
-  let entity;
-  try {
-    entity = await client.getEntity(PARTITION_KEY, ROW_KEY);
-  } catch (err) {
-    if (err.statusCode === 404) {
-      entity = { count: 0 };
-    } else {
-      throw err;
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    let entity;
+    try {
+      entity = await client.getEntity(PARTITION_KEY, ROW_KEY);
+    } catch (err) {
+      if (err.statusCode !== 404) {
+        throw err;
+      }
+      try {
+        await client.createEntity({
+          partitionKey: PARTITION_KEY,
+          rowKey: ROW_KEY,
+          count: 1,
+        });
+        return 1;
+      } catch (createErr) {
+        if (createErr.statusCode === 409) {
+          continue;
+        }
+        throw createErr;
+      }
+    }
+
+    const newCount = entity.count + 1;
+    try {
+      await client.updateEntity(
+        { partitionKey: PARTITION_KEY, rowKey: ROW_KEY, count: newCount },
+        'Merge',
+        { etag: entity.etag }
+      );
+      return newCount;
+    } catch (updateErr) {
+      if (updateErr.statusCode !== 412) {
+        throw updateErr;
+      }
     }
   }
 
-  const newCount = entity.count + 1;
-  await client.upsertEntity({
-    partitionKey: PARTITION_KEY,
-    rowKey: ROW_KEY,
-    count: newCount,
-  });
-
-  return newCount;
+  throw new Error('Could not increment counter after multiple concurrent attempts');
 }
 
 module.exports = {
