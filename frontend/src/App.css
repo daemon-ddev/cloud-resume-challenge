@@ -189,6 +189,27 @@ h2::before {
   font-size: 14px;
 }
 
+.arch-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.arch-node {
+  display: inline-block;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-muted);
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.arch-arrow {
+  color: var(--red);
+  margin: 0 6px;
+}
+
 .project-card a {
   display: inline-block;
   margin-top: 10px;
