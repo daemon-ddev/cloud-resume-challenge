@@ -1,10 +1,12 @@
+import ArchitectureDiagram from './ArchitectureDiagram';
+
 const projects = [
   {
     name: 'Cloud Resume Challenge',
     description:
       'This site: a React frontend and a serverless visitor counter, deployed to Azure Static Web Apps with infrastructure defined in Bicep and CI/CD via GitHub Actions.',
     repoUrl: 'https://github.com/daemon-ddev/cloud-resume-challenge',
-    diagram: ['Browser', 'Static Web App', 'Function', 'Table Storage'],
+    diagram: ['Browser', 'Azure Static Web Apps', 'Azure Function', 'Azure Table Storage'],
   },
   {
     name: 'AgroSense (Team Project)',
@@ -23,18 +25,7 @@ function Projects() {
           <div className="project-card" key={project.name}>
             <h3>{project.name}</h3>
             <p>{project.description}</p>
-            {project.diagram && (
-              <div className="arch-diagram">
-                {project.diagram.map((node, i) => (
-                  <span key={node}>
-                    <span className="arch-node">{node}</span>
-                    {i < project.diagram.length - 1 && (
-                      <span className="arch-arrow">&rarr;</span>
-                    )}
-                  </span>
-                ))}
-              </div>
-            )}
+            {project.diagram && <ArchitectureDiagram nodes={project.diagram} />}
             {project.repoUrl && (
               <a href={project.repoUrl} target="_blank" rel="noreferrer">
                 View on GitHub

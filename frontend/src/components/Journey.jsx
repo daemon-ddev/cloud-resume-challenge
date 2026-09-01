@@ -1,20 +1,24 @@
 function Journey() {
   return (
     <section className="section" id="journey">
-      <h2>My Cloud Journey</h2>
+      <h2>My Journey</h2>
       <p>
-        After years in sales, I decided to move into tech. I trained as a
-        software engineer with La Fosse Academy, working through weekly
-        projects and a team-built final app before choosing to specialise
-        in cloud and DevOps. From there I worked through the Azure
-        Fundamentals (AZ-900) material to learn the core concepts — cloud
-        models, Azure services, governance, cost management. I decided
-        against sitting the AZ-900 exam itself; instead I booked the AZ-104
-        (Azure Administrator Associate) exam and built this Cloud Resume
-        Challenge to prove the fundamentals actually stuck, by
-        provisioning real infrastructure with Bicep, wiring up a
-        serverless API, and shipping it through a CI/CD pipeline — not
-        just reading about how it's supposed to work.
+        I started with no background in software engineering — my career
+        before this was in sales. I trained at La Fosse Academy, working
+        across the full stack: React and React Native on the frontend,
+        Node.js and Express APIs on the backend, SQL and Firebase for data,
+        and an introduction to Docker and cloud/DevOps fundamentals — all
+        while working in agile sprints with a team, using Trello to plan
+        and ship features on a one-week cycle.
+      </p>
+      <p>
+        From there I chose to specialise in cloud and DevOps, working
+        through the Azure Fundamentals (AZ-900) material and booking the
+        AZ-104 (Azure Administrator Associate) exam. I built this Cloud
+        Resume Challenge to prove those fundamentals actually stuck —
+        provisioning real infrastructure with Bicep, wiring up a serverless
+        API, and shipping it through a CI/CD pipeline rather than just
+        reading about how it's supposed to work.
       </p>
     </section>
   );

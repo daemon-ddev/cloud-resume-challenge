@@ -1,5 +1,9 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+[id] {
+  scroll-margin-top: 90px;
+}
+
 :root {
   --bg: #0d3157;
   --bg-deep: #071f38;

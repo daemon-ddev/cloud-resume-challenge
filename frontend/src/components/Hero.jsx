@@ -4,7 +4,7 @@ function Hero() {
       <div className="hero-copy">
         <h1>Guled Jama</h1>
         <p className="tagline"><em>Cloud</em> &amp; DevOps Engineer</p>
-        <a className="btn" href="#certifications">View Certifications</a>
+        <a className="btn" href="#skills">View My Skills</a>
       </div>
       <div className="hero-photo">
         <div className="hero-photo-frame">

@@ -20,7 +20,7 @@ function About() {
         the Azure Fundamentals (AZ-900) material and now preparing for the
         AZ-104 (Azure Administrator Associate) exam.
       </p>
-      <h3>Skills</h3>
+      <h3 id="skills">Skills</h3>
       <ul className="skills-grid">
         {skills.map((skill) => (
           <li key={skill}>{skill}</li>
