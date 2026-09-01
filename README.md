@@ -73,9 +73,9 @@ npm test
 3. `az deployment group create --resource-group cloud-resume-rg --template-file infra/main.bicep --parameters namePrefix=gjresume`
 4. Add the Static Web App's deployment token as a GitHub Actions secret
    named `AZURE_STATIC_WEB_APPS_API_TOKEN`
-5. (Optional) create a public `assets` blob container on the same storage
-   account if you want to host your own profile/preview images outside
-   the repo, and update the image URLs in `frontend/src/components/Hero.jsx`
-   and `frontend/index.html` to point at them
+5. Upload your own profile/preview images to the `assets` blob container
+   (created automatically by the Bicep template) and update the image
+   URLs in `frontend/src/components/Hero.jsx` and `frontend/index.html`
+   to point at them
 6. Push to `main` — GitHub Actions runs the API tests and deploys
    automatically
