@@ -1,6 +1,6 @@
-# Cloud Resume Challenge
+# Cloud CV Challenge
 
-A personal portfolio and Cloud Resume Challenge site — deployed on real
+A personal portfolio and Cloud CV Challenge site — deployed on real
 Azure infrastructure, not just described in a document.
 
 **Live site:** https://yellow-wave-045f3af0f.3.azurestaticapps.net

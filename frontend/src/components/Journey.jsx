@@ -15,7 +15,7 @@ function Journey() {
         From there I chose to specialise in cloud and DevOps, working
         through the Azure Fundamentals (AZ-900) material and booking the
         AZ-104 (Azure Administrator Associate) exam. I built this Cloud
-        Resume Challenge to prove those fundamentals actually stuck —
+        CV Challenge to prove those fundamentals actually stuck —
         provisioning real infrastructure with Bicep, wiring up a serverless
         API, and shipping it through a CI/CD pipeline rather than just
         reading about how it's supposed to work.

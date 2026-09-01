@@ -2,7 +2,7 @@ import ArchitectureDiagram from './ArchitectureDiagram';
 
 const projects = [
   {
-    name: 'Cloud Resume Challenge',
+    name: 'Cloud CV Challenge',
     description:
       'This site: a React frontend and a serverless visitor counter, deployed to Azure Static Web Apps with infrastructure defined in Bicep and CI/CD via GitHub Actions.',
     repoUrl: 'https://github.com/daemon-ddev/cloud-resume-challenge',
