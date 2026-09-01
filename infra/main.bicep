@@ -15,6 +15,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
     name: 'Standard_LRS'
   }
   kind: 'StorageV2'
+  properties: {
+    allowBlobPublicAccess: true
+  }
 }
 
 resource tableService 'Microsoft.Storage/storageAccounts/tableServices@2023-01-01' = {
@@ -25,6 +28,20 @@ resource tableService 'Microsoft.Storage/storageAccounts/tableServices@2023-01-0
 resource visitorTable 'Microsoft.Storage/storageAccounts/tableServices/tables@2023-01-01' = {
   parent: tableService
   name: 'VisitorCounter'
+}
+
+resource blobService 'Microsoft.Storage/storageAccounts/blobServices@2023-01-01' = {
+  parent: storageAccount
+  name: 'default'
+}
+
+@description('Public container for site assets (profile photo, social-preview image) hosted outside the repo')
+resource assetsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = {
+  parent: blobService
+  name: 'assets'
+  properties: {
+    publicAccess: 'Blob'
+  }
 }
 
 resource staticWebApp 'Microsoft.Web/staticSites@2022-09-01' = {
